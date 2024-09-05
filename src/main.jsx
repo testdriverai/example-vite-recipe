@@ -14,7 +14,11 @@ const router = createBrowserRouter([
     path: "/pizza",
     element: <PizzaPage />,
   },
-]);
+],
+  {
+    basename: "/example-vite-recipe/",
+  },
+);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
