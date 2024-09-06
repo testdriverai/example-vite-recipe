@@ -27,6 +27,12 @@ h1 {
   text-align: center;
   margin-bottom: 30px;
 }
+.App h1:hover {
+  color: #3498db;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
+}
 
 .project-heading {
   font-family: 'Playfair Display', serif;
