@@ -1,35 +1,26 @@
-import { useState, useEffect } from 'react'
-import './App.css'
-import RecipeList from './components/RecipeList'
-import RecipeForm from './components/RecipeForm'
+import './App.css';
+import RecipeList from './components/RecipeList';
+import RecipeForm from './components/RecipeForm';
+import { useState } from 'react';
 
 function App() {
-  const [recipes, setRecipes] = useState([])
-
-  useEffect(() => {
-    const storedRecipes = JSON.parse(localStorage.getItem('recipes')) || []
-    setRecipes(storedRecipes)
-  }, [])
+  const [recipes, setRecipes] = useState([]);
 
   const addRecipe = (newRecipe) => {
-    const updatedRecipes = [...recipes, newRecipe]
-    setRecipes(updatedRecipes)
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes))
-  }
+    setRecipes([...recipes, { ...newRecipe, id: Date.now() }]);
+  };
 
-  const deleteRecipe = (index) => {
-    const updatedRecipes = recipes.filter((_, i) => i !== index)
-    setRecipes(updatedRecipes)
-    localStorage.setItem('recipes', JSON.stringify(updatedRecipes))
-  }
+  const deleteRecipe = (id) => {
+    setRecipes(recipes.filter(recipe => recipe.id !== id));
+  };
 
   return (
-    <div className="app">
-      <h1>Recipe Book</h1>
+    <div className="App">
+      <h1 className="project-heading">Recipe Project</h1>
       <RecipeForm addRecipe={addRecipe} />
       <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
     </div>
-  )
+  );
 }
 
-export default App
+export default App;

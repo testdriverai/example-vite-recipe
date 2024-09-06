@@ -1,4 +1,9 @@
 import { useState } from 'react'
+import PropTypes from 'prop-types'
+
+RecipeForm.propTypes = {
+  addRecipe: PropTypes.func.isRequired,
+}
 
 function RecipeForm({ addRecipe }) {
   const [title, setTitle] = useState('')
