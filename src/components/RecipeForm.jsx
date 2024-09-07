@@ -32,7 +32,7 @@ function RecipeForm({ addRecipe }) {
       <textarea
         value={ingredients}
         onChange={(e) => setIngredients(e.target.value)}
-        placeholder="Ingredients (one per line)"
+        placeholder="Ingredients (use comma to separate)"
         required
       />
       <textarea
