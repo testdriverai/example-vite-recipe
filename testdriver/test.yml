@@ -1,0 +1,69 @@
+version: 4.0.18
+steps:
+  - prompt: open chrome
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: enter "Pizza" for the recipe title field
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Recipe Title
+        description: recipe title field
+        action: click
+      - command: type
+        text: Pizza
+  - prompt: >-
+      enter the details for ingridents and instructions in raw text format and
+      seperate the ingridents using comma
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Ingredients
+        description: ingredients field
+        action: click
+      - command: type
+        text: flour, water, yeast, salt
+      - command: hover-text
+        text: Instructions
+        description: instructions field
+        action: click
+      - command: type
+        text: >-
+          Mix all ingredients, knead the dough, let it rise, bake at 200 degrees
+          for 20 minutes
+  - prompt: >-
+      for image url enter
+      "https://testdriverai.github.io/example-vite-recipe/pizza.jpg" and click
+      on add recipe button
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Image URL
+        description: image URL field
+        action: click
+      - command: type
+        text: https://testdriverai.github.io/example-vite-recipe/pizza.jpg
+      - command: hover-text
+        text: Add Recipe
+        description: add recipe button
+        action: click
+  - prompt: >-
+      scroll down and verify the recipe as indeed been added with right
+      information
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll
+        direction: down
+      - command: assert
+        expect: the recipe has been added with the correct information
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll
+        direction: down
+      - command: assert
+        expect: the recipe has been added with the correct information
