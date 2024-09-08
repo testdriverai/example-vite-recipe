@@ -1,7 +1,7 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Roboto:wght@400;700&display=swap");
 
 body {
-  font-family: 'Roboto', Arial, sans-serif;
+  font-family: "Roboto", Arial, sans-serif;
   background-color: #f0f4f8;
   color: #333;
   line-height: 1.6;
@@ -21,21 +21,7 @@ body {
 }
 
 h1 {
-  font-family: 'Playfair Display', serif;
-  font-size: 2.5rem;
-  color: #2c3e50;
-  text-align: center;
-  margin-bottom: 30px;
-}
- h1:hover {
-  color: #3498db;
-  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
-  transition: color 0.3s ease, text-shadow 0.3s ease;
-  cursor: default;
-}
-
-.project-heading {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 3rem;
   color: #2c3e50;
   text-align: center;
@@ -46,15 +32,20 @@ h1 {
   padding-bottom: 15px;
 }
 
-.project-heading::after {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
+h1::after {
+  content: "";
+  display: block;
   width: 100px;
   height: 3px;
   background-color: #3498db;
+  margin: 0 auto;
+}
+
+h1:hover {
+  color: #3498db;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+  transition: color 0.3s ease, text-shadow 0.3s ease;
+  cursor: default;
 }
 
 .recipe-form {
@@ -65,7 +56,6 @@ h1 {
   margin-bottom: 30px;
 }
 
-.recipe-form input,
 .recipe-form textarea {
   width: 100%;
   padding: 12px;
@@ -75,9 +65,9 @@ h1 {
   font-size: 16px;
 }
 
-.recipe-form textarea {
-  height: 100px;
-  resize: vertical;
+.recipe-form textarea::placeholder {
+  color: #a2a2a2;
+  font-style: italic;
 }
 
 .recipe-form button {
@@ -141,7 +131,7 @@ h1 {
 }
 
 .recipe-title {
-  font-family: 'Monaco', monospace;
+  font-family: "Monaco", monospace;
   font-size: 1.5rem;
   color: #401b30;
   margin-bottom: 15px;
@@ -153,7 +143,7 @@ h1 {
 }
 
 .section-title {
-  font-family: 'Roboto', sans-serif;
+  font-family: "Roboto", sans-serif;
   font-size: 1.1rem;
   color: #34495e;
   margin-bottom: 10px;
@@ -174,7 +164,7 @@ h1 {
 }
 
 .ingredient-list li::before {
-  content: '•';
+  content: "•";
   color: #3498db;
   position: absolute;
   left: 0;
@@ -221,4 +211,3 @@ h1 {
     grid-template-columns: 1fr;
   }
 }
-

@@ -22,8 +22,7 @@ function RecipeForm({ addRecipe }) {
 
   return (
     <form onSubmit={handleSubmit} className="recipe-form">
-      <input
-        type="text"
+      <textarea
         value={title}
         onChange={(e) => setTitle(e.target.value)}
         placeholder="Recipe Title"
@@ -41,8 +40,7 @@ function RecipeForm({ addRecipe }) {
         placeholder="Instructions"
         required
       />
-      <input
-        type="url"
+      <textarea
         value={imageLink}
         onChange={(e) => setImageLink(e.target.value)}
         placeholder="Image Link (optional)"
