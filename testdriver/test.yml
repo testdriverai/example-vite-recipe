@@ -25,15 +25,15 @@ steps:
         description: ingredients field
         action: click
       - command: type
-        text: flour, water, yeast, salt
+        text: dough, marianara sauce, ton of cheese, lots of mushrooms
       - command: hover-text
         text: Instructions
         description: instructions field
         action: click
       - command: type
         text: >-
-          Mix all ingredients, knead the dough, let it rise, bake at 200 degrees
-          for 20 minutes
+          Combine ingredients on dough, bake at 220°C (430°F) until golden and
+          bubbly.
   - prompt: >-
       for image url enter
       "https://testdriverai.github.io/example-vite-recipe/pizza.jpg" and click
