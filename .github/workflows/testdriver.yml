@@ -20,6 +20,7 @@ jobs:
           version: v4.0.0
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prerun: |
+            cd /Users/ec2-user/actions-runner/_work/testdriver/testdriver/.testdriver/
             npm install
             npm run build
             npm install dashcam-chrome --save
