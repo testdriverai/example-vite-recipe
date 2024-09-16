@@ -22,7 +22,7 @@ jobs:
             npm install
             npm run build
             npm install dashcam-chrome --save
-            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","./dist/index.html"
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","$(pwd)/dist/index.html"
             Start-Sleep -Seconds 20
           prompt: |
             1. /run testdriver/test.yml
