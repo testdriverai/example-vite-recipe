@@ -6,8 +6,6 @@ steps:
         name: Google Chrome
   - prompt: enter "Pizza" for the recipe title field
     commands:
-      - command: focus-application
-        name: Google Chrome
       - command: hover-text
         text: Recipe Title
         description: recipe title field
@@ -16,8 +14,6 @@ steps:
         text: Pizza
   - prompt: enter the details for ingridents and instructions in raw text format and
     commands:
-      - command: focus-application
-        name: Google Chrome
       - command: hover-text
         text: Ingredients
         description: ingredients field
