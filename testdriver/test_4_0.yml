@@ -1,0 +1,69 @@
+version: 4.1.7
+steps:
+  - prompt: open chrome
+    commands:
+      - command: focus-application
+        name: Google Chrome
+  - prompt: 
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Recipe Title
+        description: recipe title field
+        action: click
+      - command: type
+        text: Pizza
+  - prompt: >-
+      enter the details for ingridents and instructions in raw text format and
+      seperate the ingridents using comma
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Ingredients
+        description: ingredients field
+        action: click
+      - command: type
+        text: dough, marianara sauce, ton of cheese, lots of mushrooms
+      - command: hover-text
+        text: Instructions
+        description: instructions field
+        action: click
+      - command: type
+        text: >-
+          Combine ingredients on dough, bake at 220°C (430°F) until golden and
+          bubbly.
+  - prompt: >-
+      for image url enter
+      "https://testdriverai.github.io/example-vite-recipe/pizza.jpg" and click
+      on add recipe button
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: hover-text
+        text: Image URL
+        description: image URL field
+        action: click
+      - command: type
+        text: https://testdriverai.github.io/example-vite-recipe/pizza.jpg
+      - command: hover-text
+        text: Add Recipe
+        description: add recipe button
+        action: click
+  - prompt: >-
+      scroll down and verify the recipe as indeed been added with right
+      information
+    commands:
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll
+        direction: down
+      - command: assert
+        expect: the recipe has been added with the correct information
+      - command: focus-application
+        name: Google Chrome
+      - command: scroll
+        direction: down
+      - command: assert
+        expect: the recipe has been added with the correct information

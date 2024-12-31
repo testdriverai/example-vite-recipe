@@ -6,6 +6,10 @@ on:
   pull_request:
   workflow_dispatch:
 
+permissions:
+    contents: read # To allow the action to read repository contents
+    pull-requests: write # To allow the action to create/update pull request comments
+
 jobs:
   test:
     name: "TestDriver"
@@ -15,8 +19,15 @@ jobs:
         version: v4.0.0
         key: ${{secrets.TESTDRIVER_API_KEY}}
         with:
+          key: ${{secrets.TESTDRIVER_API_KEY}}
+          prerun: |
+            npm install
+            npm run build
+            npm install dashcam-chrome --save
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","$(pwd)/dist/index.html"
+            Start-Sleep -Seconds 20
           prompt: |
-            1. /run /Users/ec2-user/actions-runner/_work/testdriver/testdriver/testdriver/test.yml
+            1. /run testdriver/test.yml
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"

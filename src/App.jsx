@@ -1,10 +1,17 @@
 import './App.css';
 import RecipeList from './components/RecipeList';
 import RecipeForm from './components/RecipeForm';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 
 function App() {
-  const [recipes, setRecipes] = useState([]);
+  const [recipes, setRecipes] = useState(() => {
+    const savedRecipes = localStorage.getItem('recipes');
+    return savedRecipes ? JSON.parse(savedRecipes) : [];
+  });
+
+  useEffect(() => {
+    localStorage.setItem('recipes', JSON.stringify(recipes));
+  }, [recipes]);
 
   const addRecipe = (newRecipe) => {
     setRecipes([...recipes, { ...newRecipe, id: Date.now() }]);
@@ -16,7 +23,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Recipe Book Testing</h1>
+      <h1>Recipe Book Demo</h1>
       <RecipeForm addRecipe={addRecipe} />
       <RecipeList recipes={recipes} deleteRecipe={deleteRecipe} />
     </div>
