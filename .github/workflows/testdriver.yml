@@ -16,8 +16,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: testdriverai/action@main
-        version: v4.0.0
-        key: ${{secrets.TESTDRIVER_API_KEY}}
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prerun: |
