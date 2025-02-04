@@ -19,7 +19,6 @@ jobs:
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
           clone-repo: false
-          version: test-clone-repo
           prerun: |
             node --version
             npm install
