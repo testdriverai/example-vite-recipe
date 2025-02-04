@@ -15,7 +15,7 @@ jobs:
     name: "TestDriver"
     runs-on: ubuntu-latest
     steps:
-      - uses: testdriverai/action@main
+      - uses: testdriverai/action@test-clone-repo
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prerun: |
