@@ -18,14 +18,11 @@ jobs:
       - uses: testdriverai/action@test-clone-repo
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
-          clone-repo: true
-          create-pr: false
+          clone-repo: false
           prerun: |
-            node --version
-            npm install
-            npm run build
+            cd $env:TEMP
             npm install dashcam-chrome --save
-            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","$(pwd)/dist/index.html"
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","https://testdriverai.github.io/example-vite-recipe/"
             Start-Sleep -Seconds 20
           prompt: |
             1. /run testdriver/test.yml
