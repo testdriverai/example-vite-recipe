@@ -18,7 +18,7 @@ jobs:
       - uses: testdriverai/action@test-clone-repo
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
-          clone-repo: false
+          clone-repo: true
           create-pr: true
           prerun: |
             node --version
