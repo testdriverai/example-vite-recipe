@@ -11,10 +11,6 @@ permissions:
     pull-requests: write # To allow the action to create/update pull request comments
 
 jobs:
-  teesting:
-    runs-on: ubuntu-latest
-    steps:
-      - run: echo ${{ secrets.TD_PIZZA }}
   test:
     name: "TestDriver"
     runs-on: ubuntu-latest
