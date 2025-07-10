@@ -1,4 +1,4 @@
-name: TestDriver.ai
+name: TestDriver v6
 
 on:
   push:
@@ -25,7 +25,7 @@ jobs:
         with:
           node-version: "20"
           cache: "npm"
-          
+
       - name: Run test in headless mode
         run: npx testdriverai@beta run testdriver/test.yml
         env:
