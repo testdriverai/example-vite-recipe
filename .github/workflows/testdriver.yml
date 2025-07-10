@@ -19,7 +19,6 @@ jobs:
         with:
           key: ${{secrets.TESTDRIVER_API_KEY}}
           prerun: |
-            node --version
             npm install
             npm run build
             npm install dashcam-chrome --save
@@ -31,3 +30,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           FORCE_COLOR: "3"
           TD_PIZZA: ${{ secrets.TD_PIZZA}}
+
