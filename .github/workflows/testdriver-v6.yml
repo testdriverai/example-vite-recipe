@@ -22,7 +22,7 @@ jobs:
         run: |
          npm ci
          npm run build
-         npm run preview & npx wait-on http://localhost:4173 && npx testdriverai@latest run testdriver/test.yml
+         npm run preview & npx testdriverai@latest run testdriver/test.yml
         env:
           FORCE_COLOR: 3
           TD_API_KEY: ${{ secrets.TESTDRIVER_API_KEY }}
