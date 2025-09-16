@@ -17,17 +17,10 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-        with:
-          fetch-depth: 0
-
-      - name: Set up Node.js
-        uses: actions/setup-node@v4
-        with:
-          node-version: "20"
-          cache: "npm"
 
       - name: Run test in headless mode
-        run: npx testdriverai@beta run testdriver/test.yml
+        run: |
+         npm run dev & npx wait-on http://localhost:5173 && npx testdriverai@latest run testdriver/test.yml
         env:
           FORCE_COLOR: 3
           TD_API_KEY: ${{ secrets.TESTDRIVER_API_KEY }}
