@@ -8,16 +8,7 @@ test('test', async ({ page }) => {
   await page.getByRole('textbox', { name: 'Image Link (optional)' }).fill('https://testdriverai.github.io/example-vite-recipe/pizza.jpg');
   await page.getByRole('button', { name: 'Add Recipe' }).click();
   await expect(page.getByRole('img', { name: 'Pizza' })).toBeVisible();
-await expect(page.locator('#root')).toContainText([
-    'Pizza',
-    'Ingredients',
-    'Cheeze',
-    'tomatoes',
-    'mushrooms',
-    'Instructions:',
-    'Put everything on top of the dough and cook for 10 min',
-    'Delete Recipe'
-].join(''));
+await expect(page.locator('#root')).toContainText("PizzaIngredientsCheezetomatoesmushroomsInstructions:Put everything on top of the dough and cook for 10 minDelete Recipe");
   await page.getByRole('button', { name: 'Delete Recipe' }).click();
   await expect(page.locator('#root')).toMatchAriaSnapshot(`
     - heading "Recipe Book" [level=1]
