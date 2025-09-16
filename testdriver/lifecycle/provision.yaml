@@ -10,7 +10,7 @@ steps:
             $env:TEMP
             Write-Host (pwd)
             npm install dashcam-chrome --save
-            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","$(pwd)/dist/index.html"
+            Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","http://localhost:4173"
       - command: wait-for-text
         text: Recipe Book
         timeout: 60000
