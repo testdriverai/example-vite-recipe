@@ -6,7 +6,6 @@ steps:
       - command: exec
         lang: pwsh
         code: |
-            $env:TEMP
             git clone https://github.com/testdriverai/example-vite-recipe.git
             cd ./example-vite-recipe
             npm ci
