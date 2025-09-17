@@ -6,9 +6,12 @@ steps:
       - command: exec
         lang: pwsh
         code: |
-            Write-Host (pwd)       
             $env:TEMP
-            Write-Host (pwd)
+            git clone https://github.com/testdriverai/example-vite-recipe.git
+            cd ./example-vite-recipe
+            npm ci
+            npm run build
+            npm run preview
             npm install dashcam-chrome --save
             Start-Process "C:/Program Files/Google/Chrome/Application/chrome.exe" -ArgumentList "--start-maximized","--load-extension=$(pwd)/node_modules/dashcam-chrome/build","--allow-file-access-from-files","http://localhost:4173"
       - command: wait-for-text
